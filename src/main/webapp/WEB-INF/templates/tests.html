@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Santiago_Z Nicolas_Sanchez Juan_Robledo">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="styles/foot.css">
+    <script src="js/panel.js"></script>
+    <script src="js/active.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <a href="index.html" class="logo">JN<span id="logo-i">Z</span></a>
+            <ul class="navlinks">
+                <li> <a href="index.html">Presentación</a></li>
+                <li> <a href="requirements.html">Requerimientos</a></li>
+                <li> <a href="description.html">Descripción</a></li>
+                <li> <a href="architecture.html">Arquitectura</a></li>
+                <li> <a href="development.html">Desarrollo</a></li>
+                <li> <a href="tests.html">Pruebas</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div id="root-wrapper">
+        <div id="root">
+
+            <div class="panel">
+                <h1>Docs</h1>
+                <ul class="panel-list" id="table-panel">
+
+                </ul>
+
+
+            </div>
+            <div class="content">
+                <h1 class="content-title">Pruebas</h1>
+
+                <h2 class="content-subtitle">Pruebas de usabilidad</h2>
+
+                <h2 class="content-subtitle2">testGetTeamById()</h2>
+                    <p>Se espera que se obtenga un equipo por su ID y que el resultado no sea nulo, y sea igual al equipo esperado.</p>
+                <h2 class="content-subtitle2">testGetTeamByIdThrowsExceptionWhenTeamNotExists()</h2>
+                    <p>Se espera que se lance una excepción TeamNotExistsException cuando se intenta obtener un equipo que no existe en la base de datos.</p>
+                <h2 class="content-subtitle2">testFindAll()</h2>
+                    <p>Se espera que se obtengan todos los equipos en la base de datos y que el resultado no sea nulo, y que el tamaño de la lista de equipos sea igual a 1, y que el equipo obtenido sea igual al equipo esperado.</p>
+                <h2 class="content-subtitle2">testAddTeam()</h2>
+                    <p>Se espera que se agregue un equipo a la base de datos, que se guarde correctamente en el repositorio, y que se llame al método addTeamToUser() del servicio de usuarios con los parámetros correctos.</p>
+                <h2 class="content-subtitle2">testDeleteTeam()</h2>
+                    <p>Se espera que se borre un equipo de la base de datos, que se llame al método delete() del repositorio con el equipo correcto, y que el equipo sea eliminado de la lista de equipos del usuario.</p>
+                <h2 class="content-subtitle2">testGetUsersByTeamId()</h2>
+                    <p>Se espera que se obtengan todos los usuarios que pertenecen a un equipo por su ID, y que el resultado no sea nulo, y que el tamaño de la lista de usuarios sea igual a 1, y que el usuario obtenido sea igual al usuario esperado.</p>
+                <h2 class="content-subtitle2">testUpdateTeam()</h2>
+                    <p>Se espera que se actualice el nombre de un equipo en la base de datos, y que el nombre del equipo actualizado sea igual al nombre esperado.</p>
+                <h2 class="content-subtitle2">testGetTeamsWhereUserIsNotAt()</h2>
+                    <p>Se espera que se obtengan todos los equipos a los que un usuario no pertenece, y que el resultado no sea nulo, y que la lista de equipos obtenidos no contenga al usuario esperado.</p>
+
+                <h2 class="content-subtitle">Pruebas unitarias</h2>
+                <h2 class="content-subtitle2">shouldThrowUserNotExistsException()</h2>
+                <p>
+                    Esta prueba verifica si se lanza una excepción UserNotExistsException cuando se intenta obtener un usuario por un ID que no existe en el repositorio. El resultado esperado es que se lance la excepción UserNotExistsException.
+                </p>
+                <h2 class="content-subtitle2">shouldAddUser()</h2>
+                <p>
+                    Esta prueba verifica si se puede agregar un usuario correctamente. El resultado esperado es que el usuario agregado sea igual al usuario esperado, sin lanzar ninguna excepción.
+                </p>
+                <h2 class="content-subtitle2">shouldThrowUsernameAlreadyExistsException()</h2>
+                <p>
+                    Esta prueba verifica si se lanza una excepción UsernameAlreadyExistsException cuando se intenta agregar un usuario con un nombre de usuario que ya existe en el repositorio. El resultado esperado es que se lance la excepción UsernameAlreadyExistsException.
+                </p>
+                <h2 class="content-subtitle2">shouldThrowEmailAlreadyExistsException()</h2>
+                <p>
+                    Esta prueba verifica si se lanza una excepción EmailAlreadyExistsException cuando se intenta agregar un usuario con una dirección de correo electrónico que ya existe en el repositorio. El resultado esperado es que se lance la excepción EmailAlreadyExistsException.
+                </p>
+                <h2 class="content-subtitle2">shouldDeleteUser()</h2>
+                <p>
+                    Esta prueba verifica si se puede eliminar un usuario correctamente. El resultado esperado es que el usuario sea eliminado del repositorio y se lance una excepción UserNotExistsException al intentar obtenerlo nuevamente por su ID.
+                </p>
+
+            </div>
+        </div>
+        <footer>
+            <div id="footer-wrapper">
+                <div class="socials-wrapper">
+                    <img src="" alt="">
+                    <a href="https://www.instagram.com"><img class="social-icon" src="img/instagram.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.twitter.com"><img class="social-icon" src="img/twitter.png" alt="Twitter"></a>
+                    <a href="https://www.github.com"><img class="social-icon" src="img/github.png" alt="Github"></a>
+
+                </div>
+
+                <div class="about-wrapper">
+                    <a href="contact.html" class="about-link"><i class="about-text">Contacto</i></a>
+
+                    <i class="about-text">Alojado en render.com</i>
+                    <i class="about-text">🄯Yo 2023</i>
+                </div>
+
+            </div>
+
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+</html>
