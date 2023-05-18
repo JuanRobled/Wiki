@@ -27,6 +27,7 @@
                 <li> <a href="architecture.html">Arquitectura</a></li>
                 <li> <a href="development.html">Desarrollo</a></li>
                 <li> <a href="tests.html">Pruebas</a></li>
+                <li> <a href="deployment.html">Despliegue</a></li>
                 
             </ul>
         </nav>
@@ -45,57 +46,43 @@
             </div>
             <div class="content">
                 <h1 class="content-title">Pruebas</h1>
-
-                <h2 class="content-subtitle">Pruebas de usabilidad</h2>
-
-                <h2 class="content-subtitle2">testGetTeamById()</h2>
-                    <p>Se espera que se obtenga un equipo por su ID y que el resultado no sea nulo, y sea igual al equipo esperado.</p>
-                <h2 class="content-subtitle2">testGetTeamByIdThrowsExceptionWhenTeamNotExists()</h2>
-                    <p>Se espera que se lance una excepción TeamNotExistsException cuando se intenta obtener un equipo que no existe en la base de datos.</p>
-                <h2 class="content-subtitle2">testFindAll()</h2>
-                    <p>Se espera que se obtengan todos los equipos en la base de datos y que el resultado no sea nulo, y que el tamaño de la lista de equipos sea igual a 1, y que el equipo obtenido sea igual al equipo esperado.</p>
-                <h2 class="content-subtitle2">testAddTeam()</h2>
-                    <p>Se espera que se agregue un equipo a la base de datos, que se guarde correctamente en el repositorio, y que se llame al método addTeamToUser() del servicio de usuarios con los parámetros correctos.</p>
-                <h2 class="content-subtitle2">testDeleteTeam()</h2>
-                    <p>Se espera que se borre un equipo de la base de datos, que se llame al método delete() del repositorio con el equipo correcto, y que el equipo sea eliminado de la lista de equipos del usuario.</p>
-                <h2 class="content-subtitle2">testGetUsersByTeamId()</h2>
-                    <p>Se espera que se obtengan todos los usuarios que pertenecen a un equipo por su ID, y que el resultado no sea nulo, y que el tamaño de la lista de usuarios sea igual a 1, y que el usuario obtenido sea igual al usuario esperado.</p>
-                <h2 class="content-subtitle2">testUpdateTeam()</h2>
-                    <p>Se espera que se actualice el nombre de un equipo en la base de datos, y que el nombre del equipo actualizado sea igual al nombre esperado.</p>
-                <h2 class="content-subtitle2">testGetTeamsWhereUserIsNotAt()</h2>
-                    <p>Se espera que se obtengan todos los equipos a los que un usuario no pertenece, y que el resultado no sea nulo, y que la lista de equipos obtenidos no contenga al usuario esperado.</p>
-
-                <h2 class="content-subtitle">Pruebas unitarias</h2>
-                <h2 class="content-subtitle2">shouldThrowUserNotExistsException()</h2>
-                <p>
-                    Esta prueba verifica si se lanza una excepción UserNotExistsException cuando se intenta obtener un usuario por un ID que no existe en el repositorio. El resultado esperado es que se lance la excepción UserNotExistsException.
-                </p>
-                <h2 class="content-subtitle2">shouldAddUser()</h2>
-                <p>
-                    Esta prueba verifica si se puede agregar un usuario correctamente. El resultado esperado es que el usuario agregado sea igual al usuario esperado, sin lanzar ninguna excepción.
-                </p>
-                <h2 class="content-subtitle2">shouldThrowUsernameAlreadyExistsException()</h2>
-                <p>
-                    Esta prueba verifica si se lanza una excepción UsernameAlreadyExistsException cuando se intenta agregar un usuario con un nombre de usuario que ya existe en el repositorio. El resultado esperado es que se lance la excepción UsernameAlreadyExistsException.
-                </p>
-                <h2 class="content-subtitle2">shouldThrowEmailAlreadyExistsException()</h2>
-                <p>
-                    Esta prueba verifica si se lanza una excepción EmailAlreadyExistsException cuando se intenta agregar un usuario con una dirección de correo electrónico que ya existe en el repositorio. El resultado esperado es que se lance la excepción EmailAlreadyExistsException.
-                </p>
-                <h2 class="content-subtitle2">shouldDeleteUser()</h2>
-                <p>
-                    Esta prueba verifica si se puede eliminar un usuario correctamente. El resultado esperado es que el usuario sea eliminado del repositorio y se lance una excepción UserNotExistsException al intentar obtenerlo nuevamente por su ID.
-                </p>
-
+                <h2 class="content-subtitle">JwtServiceTest</h2>
+                
+                <h2 class="content-subtitle2">checkValidToken()</h2>
+                <p>Esta prueba verifica si un token es válido. Se asegura de que el servicio Jwt pueda validar correctamente un token y determinar si es válido o no.</p>
+            
+                <h2 class="content-subtitle2">checkUsernameToken()</h2>
+                <p>Esta prueba comprueba si el servicio Jwt puede extraer correctamente el nombre de usuario del token. Verifica si el servicio puede obtener el nombre de usuario almacenado en el token.</p>
+            
+                <h2 class="content-subtitle2">genToken()</h2>
+                <p>Esta prueba se encarga de verificar si el servicio Jwt puede generar un token correctamente. Asegura que el servicio pueda crear un token con los datos requeridos.</p>
+            
+                <h2 class="content-subtitle">RequestControllerTest</h2>
+            
+                <h2 class="content-subtitle2">getRequestBadRequest()</h2>
+                <p>Esta prueba se enfoca en verificar el manejo de una solicitud de obtener datos cuando se proporcionan parámetros incorrectos o insuficientes. Comprueba si el controlador de solicitudes puede manejar adecuadamente una solicitud inválida y responder con un código de error correspondiente.</p>
+                
+                <h2 class="content-subtitle2">acceptRequestBadRequest()</h2>
+                <p>Esta prueba se centra en probar el manejo de una solicitud de aceptación de una solicitud específica cuando se proporcionan datos incorrectos. Verifica si el controlador puede identificar y manejar adecuadamente una solicitud inválida y devolver un código de error apropiado.</p>
+                
+                <h2 class="content-subtitle2">declineRequest()</h2>
+                <p> Esta prueba se encarga de verificar el manejo de una solicitud de rechazo de una solicitud específica. Asegura que el controlador pueda procesar correctamente la solicitud de rechazo y proporcionar una respuesta adecuada.</p>
+                <div class="image-section">
+                    <h2 class="content-subtitle">Implementacion </h2>
+                    <img src="img/test.jpg" alt="Descripción de la imagen">
+                    <p>En esta imagen se puede ver como se ejecutan todas las pruebas que se describen anteriormente y el tiempo que toma cada una ademas del tiempo en que se hacen por seccion y en total</p>
+                </div>
             </div>
+            
         </div>
-        <footer>
-            <div id="footer-wrapper">
-                <div class="socials-wrapper">
-                    <img src="" alt="">
+    </div>
+    <footer>
+        <div id="footer-wrapper">
+            <div class="socials-wrapper">
+                <img src="" alt="">
                     <a href="https://www.instagram.com"><img class="social-icon" src="img/instagram.png"
                             alt="Instagram"></a>
-                    <a href="https://www.twitter.com"><img class="social-icon" src="img/twitter.png" alt="Twitter"></a>
+                            <a href="https://www.twitter.com"><img class="social-icon" src="img/twitter.png" alt="Twitter"></a>
                     <a href="https://www.github.com"><img class="social-icon" src="img/github.png" alt="Github"></a>
 
                 </div>
